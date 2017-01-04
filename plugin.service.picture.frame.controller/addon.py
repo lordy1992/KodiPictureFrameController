@@ -1,12 +1,12 @@
-import xbmc
-import time
+from bottle import route, run, template
 
+@route('/')
+def home():
+    return "Hello world!"
+
+@route('/hello/<name>')
+def greet(name):
+    return template('Hello {{name}}!', name=name)
+    
 if __name__ == '__main__':
-    monitor = xbmc.Monitor()
-
-    while not monitor.abortRequested():
-        # TODO: Do something useful
-        if monitor.waitForAbort(10):
-            # Currently, just wait for 10 seconds or until the service is aborted
-            break
-        xbmc.log("Current time: %s" % time.time(), level=xbmc.LOGDEBUG)
+    run(host='', port=8080, debug=True)

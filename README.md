@@ -22,3 +22,10 @@ Then, on OSMC, to install and test:
 
 In order to see the log, you can go to Settings -> System -> Logging and select "Enable debug logging"
 The log file is located in ~/.kodi/temp (unless you change this -- this is the default)
+
+**Note:** This plugin uses Bottle, and you must install module.script.bottle. You can find a zip for this addon easily (it is maintained by Team Kodi) and install it. 
+This must be done prior to installing this plugin.
+
+In order to test, modifications can be made to the Python files in the add-on after it has been installed. These files are located in ~/.kodi/addons/plugin.service.picture.frame.controller
+You can edit and test the Python files here. If you make changes and wish to test, go to Settings -> Add-ons -> My add-ons -> Services -> Lord of Pictures Controller.
+Then click "Disable" and then "Enable"; when the service restarts, the changes will take effect.
